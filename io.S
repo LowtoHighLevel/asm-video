@@ -14,6 +14,4 @@ print_char:
 	# reload our used register
 	add r30 r30 r28
 	read r30 r1
-	
-	# return
 	ret r26
