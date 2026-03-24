@@ -3,7 +3,6 @@ init:
 	ld r30 14332
 	j main
 
-
 .include ./io.S
 .include ./math.S
 
@@ -46,7 +45,6 @@ shift_test:
 	read r30 r1
 
 	ret r26
-
 	
 # Main function
 main:
