@@ -45,14 +45,9 @@ shift_test:
 	read r30 r1
 
 	ret r26
-	
-# Main function
-main:
-	call shift_test
-	
-	# Hi output test
-	ld r1 15
-	# prints hi
+
+# prints hi	
+print_hi:
 	ld r2 'H'
 	call print_char
 	ld r2 'I'
@@ -61,5 +56,44 @@ main:
 	call print_char
 	ld r2 '\n'
 	call print_char
+	ret r26
+
+mult_test:
+	ld r1 2
+	ld r2 4
+	call multiply
+	# r3 should be 8
+	ld r2 '0'
+	add r2 r2 r3
+	call print_char
+	ld r2 '\n'
+	call print_char
+	ret r26
+
+div_test:
+	ld r1 9
+	ld r2 4
+	call divide
+	# r3 should be 8
+	ld r2 '0'
+	add r2 r2 r3
+	call print_char
+	ld r2 '\n'
+	call print_char
+	ld r2 '0'
+	add r2 r2 r4
+	call print_char
+	ld r2 '\n'
+	call print_char
+	ret r26
+	
+# Main function
+main:
+	call shift_test
+	call mult_test
+	call div_test
+	# Hi output test
+	ld r1 15
+	call print_hi
 	# HACK, tells our emulator to quit.
 	ld r30 36000
